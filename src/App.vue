@@ -1,8 +1,6 @@
 <template>
   <div>
-    <nav>
-      <h1>H2H</h1>
-    </nav>
+    <Navbar />
     <main>
       <router-view></router-view>
     </main>
@@ -10,8 +8,12 @@
 </template>
 
 <script>
-export default {
+import Navbar from '@/components/Navbar';
 
+export default {
+  components: {
+    Navbar,
+  },
 };
 </script>
 
