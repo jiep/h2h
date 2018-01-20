@@ -1,3 +1,21 @@
-<ul>
-  <li v-for="game in games">{{game}}</li>
-</ul>
+<div class="section content">
+  <div class="box" v-for="game in games">
+    <div class="container">
+      <b-field grouped>
+        <div class="control">
+          <b-taglist attached>
+            <b-tag type="is-large is-dark">{{game.player1.name}}</b-tag>
+            <b-tag type="is-large is-info">{{game.player1.result}}</b-tag>
+          </b-taglist>
+        </div>
+        <div class="control">
+          <b-taglist attached>
+            <b-tag type="is-large is-info">{{game.player1.result}}</b-tag>
+            <b-tag type="is-large is-dark">{{game.player1.name}}</b-tag>
+          </b-taglist>
+        </div>
+      </b-field>
+    </div>
+
+  </div>
+</div>
