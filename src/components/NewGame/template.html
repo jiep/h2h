@@ -1,0 +1,31 @@
+<section class="section">
+  <form>
+    <div class="columns">
+      <div class="column">
+        <div class="content">
+        <b-field>
+          <b-input v-model="player1.name" name="player1" type="text" placeholder="Name"></b-input>
+        </b-field>
+        <b-field>
+          <b-input v-model="player1.result" name="result1" type="number" placeholder="Result" min="0"></b-input>
+        </b-field>
+        </div>
+      </div>
+      <div class="is-divider-vertical" data-content="VS"></div>
+      <div class="column">
+        <b-field>
+          <b-input v-model="player2.name" name="player2" type="text" placeholder="Name"></b-input>
+        </b-field>
+        <b-field>
+          <b-input v-model="player2.result" name="result2" type="number" placeholder="Result" min="0"></b-input>
+        </b-field>
+      </div>
+    </div>
+    <button class="button is-primary" @click="newGame">
+      <span>
+        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+      </span>
+      <span> New game</span>
+    </button>
+  </form>
+</section>

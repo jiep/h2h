@@ -3,16 +3,21 @@
 import Vue from 'vue';
 import Vuefire from 'vuefire';
 import VueRouter from 'vue-router';
-import axios from 'axios';
+import Buefy from 'buefy';
+import 'buefy/lib/buefy.css';
+import 'bulma-divider/bulma-divider.css';
+import 'font-awesome/css/font-awesome.min.css';
+
 import App from './App';
 import router from './router';
 import firebase from './services/firebase';
 
 Vue.use(Vuefire);
 Vue.use(VueRouter);
+Vue.use(Buefy);
+
 
 Vue.config.productionTip = false;
-Vue.prototype.$http = axios;
 
 /* eslint-disable no-new */
 new Vue({
@@ -22,5 +27,14 @@ new Vue({
   components: { App },
   firebase: {
     h2h: firebase.database.ref('h2h').orderByChild('created_at'),
+  },
+  created() {
+    firebase.firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.$router.push('/');
+      } else {
+        this.$router.push('/login');
+      }
+    });
   },
 });
