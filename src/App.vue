@@ -1,18 +1,18 @@
 <template>
   <div>
     <Navbar />
-    <main>
-      <router-view></router-view>
-    </main>
+    <Main />
   </div>
 </template>
 
 <script>
 import Navbar from '@/components/Navbar';
+import Main from '@/components/Main';
 
 export default {
   components: {
     Navbar,
+    Main,
   },
 };
 </script>

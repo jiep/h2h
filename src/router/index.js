@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 // import Home from '@/components/Home';
 import Login from '@/components/Login';
-import Game from '@/components/Game';
+import NewGame from '@/components/NewGame';
 import GameList from '@/components/GameList';
 
 Vue.use(Router);
@@ -19,7 +19,7 @@ export default new Router({
     },
     {
       path: '/new',
-      component: Game,
+      component: NewGame,
     },
   ],
 });
