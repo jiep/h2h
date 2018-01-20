@@ -1,0 +1,8 @@
+{
+  "rules": {
+    "h2h": {
+      ".read": "auth !== null",
+      ".write": "auth !== null"
+    }
+  }
+}

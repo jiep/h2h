@@ -13,4 +13,5 @@ firebase.initializeApp(config);
 
 export default {
   database: firebase.database(),
+  firebase,
 };
