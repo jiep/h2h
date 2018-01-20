@@ -21,15 +21,26 @@ export default {
           player2: this.player2,
           created_at: new Date().getTime(),
         })
-        .then(this.$router.push('/'))
-        .catch(console.log('It was an error'));
+        .then(() => {
+          this.$toast.open({
+            message: 'Game added correctly!',
+            type: 'is-success',
+            position: 'is-bottom',
+          });
+          this.$router.push('/');
+        })
+        .catch(() =>{
+          this.$toast.open({
+            message: 'It was an error. Please try again',
+            type: 'is-danger',
+            position: 'is-bottom',
+          });
+        });
     }
   },
   created() {
     firebase.firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        this.$router.push('/');
-      } else {
+      if (!user) {
         this.$router.push('/login');
       }
     });

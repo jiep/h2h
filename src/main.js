@@ -6,6 +6,7 @@ import VueRouter from 'vue-router';
 import Buefy from 'buefy';
 import 'buefy/lib/buefy.css';
 import 'bulma-divider/bulma-divider.css';
+import 'font-awesome/css/font-awesome.min.css';
 
 import App from './App';
 import router from './router';
