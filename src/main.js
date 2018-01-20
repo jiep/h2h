@@ -3,12 +3,17 @@
 import Vue from 'vue';
 import Vuefire from 'vuefire';
 import VueRouter from 'vue-router';
+import Buefy from 'buefy';
+import 'buefy/lib/buefy.css';
+
 import App from './App';
 import router from './router';
 import firebase from './services/firebase';
 
 Vue.use(Vuefire);
 Vue.use(VueRouter);
+Vue.use(Buefy);
+
 
 Vue.config.productionTip = false;
 
