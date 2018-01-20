@@ -27,4 +27,13 @@ new Vue({
   firebase: {
     h2h: firebase.database.ref('h2h').orderByChild('created_at'),
   },
+  created() {
+    firebase.firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.$router.push('/');
+      } else {
+        this.$router.push('/login');
+      }
+    });
+  },
 });

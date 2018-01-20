@@ -1,3 +1,5 @@
+import firebase from '@/services/firebase';
+
 export default {
   data () {
     return {
@@ -23,4 +25,13 @@ export default {
         .catch(console.log('It was an error'));
     }
   },
-}
+  created() {
+    firebase.firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.$router.push('/');
+      } else {
+        this.$router.push('/login');
+      }
+    });
+  },
+};
